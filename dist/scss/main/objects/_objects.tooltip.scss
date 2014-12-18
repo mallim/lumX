@@ -62,21 +62,21 @@
 // Tooltip skin modifiers
 .tooltip--black {
 	.tooltip__background {
-		background-color: $grey-600;
+		background-color: #737373;
 	}
 
 	.tooltip__label {
-		color: $white-1;
+		color: #fff;
 	}
 }
 
 .tooltip--white {
 	.tooltip__background {
-		background-color: $grey-200;
+		background-color: #eee;
 	}
 
 	.tooltip__label {
-		color: $black-1;
+		color: #000;
 	}
 }
 

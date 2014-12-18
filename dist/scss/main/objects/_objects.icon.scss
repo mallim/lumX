@@ -14,8 +14,8 @@
 
 // Icon sizes
 .icon--s {
-    @include size($size-xs);
-    line-height: $size-xs;
+    @include size(24px);
+    line-height: 24px;
 
     &.icon--circled {
         @include font-size(10px);
@@ -27,8 +27,8 @@
 }
 
 .icon--l {
-    @include size($size-l);
-    line-height: $size-l;
+    @include size(40px);
+    line-height: 40px;
 
     &.icon--circled {
         @include font-size(18px);
@@ -46,7 +46,7 @@
 // Icon colors
 @each $key, $color in $colors {
     .icon--circled.icon--#{$key} {
-        color: $white-1;
+        color: #fff;
         background-color: $color;
     }
 

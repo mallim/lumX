@@ -1,9 +1,9 @@
 ///*------------------------------------*\
-//    #OBJECTS-FILE-INPUT
+//    #OBJECTS-INPUT-GROUP
 //\*------------------------------------*/
 
-// Input file base styles
-.input-file {
+// Input group base styles
+.input-group {
     position: relative;
     padding-top: double($md-spacing-unit);
     padding-bottom: halve($md-spacing-unit);
@@ -30,52 +30,48 @@
     }
 }
 
-// Input file base styles
-label {
-  display: block;
-  position: relative;
-  height: 32px;
-  cursor: pointer;
-}
-
-.input-file--is-active {
-    .input-file__label {
+.input-group--is-active {
+    .input-group__label {
         @include font-size(12px);
         @include transform(translateY($md-spacing-unit));
     }
-
-    .input-file__filename {
-        opacity: 1;
-        @include transform(translateX(0));
-    }
 }
 
-.input-file--is-focused {
+.input-group--is-focused {
     &:after {
         @include transform(scale(1));
     }
 
-    .input-file__label {
+    .input-group__label {
         color: $blue;
     }
 }
 
-.input-file--has-error {
+.input-group--is-disabled {
+    &:before {
+        border-bottom-style: dashed;
+    }
+
+    .input-group__input {
+        color: #aaa;
+        cursor: not-allowed;
+    }
+}
+
+.input-group--has-error {
     &:after {
         background-color: $red;
         @include transform(scale(1));
     }
 
-    .input-file__label {
-        @include font-size(12px);
-        @include transform(translateY($md-spacing-unit));
+    .input-group__label {
         color: $red;
     }
 }
     
     // Input group label
-    .input-file__label {
-        @include position(absolute, -32px null null 0);
+    .input-group__label {
+        @include position(absolute, 0 null null 0);
         color: #aaa;
         line-height: $md-spacing-unit;
         pointer-events: none;
@@ -85,17 +81,18 @@ label {
         @include transition-timing-function($ease-out-quint);
     }
 
-    .input-file__filename {
-        @include position(relative, 4px null null null);
-        opacity: 0;
-        @include transform(translateX(double($base-spacing-unit)));
-        @include transition-property(transform, opacity);
-        @include transition-duration(0.6s);
-        @include transition-timing-function($ease-out-quint);
-        font-weight: 400;
-    }
-
     // Input group input
-    .input-file__input {
-        @extend %visuallyhidden;
+    .input-group__input {
+        display: block;
+        @include size(100% double($md-spacing-unit));
+        margin: 0;
+        padding: 0;
+        border: none;
+        font-weight: 400;
+        cursor: text;
+        @include appearance(none);
+
+        &:focus {
+            outline: none;
+        }
     }

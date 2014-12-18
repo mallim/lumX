@@ -20,7 +20,7 @@
 
     $breakpoint-found: false;
 
-    // Loop through the list of breakpoints we have provided in our settings file.
+    // Loop through the list of breakpoints we’ve provided in our settings file.
     @each $breakpoint in $breakpoints {
 
         // Grab the alias and the condition from their respective locations in
@@ -28,10 +28,10 @@
         $alias:     nth($breakpoint, 1);
         $condition: nth($breakpoint, 2);
 
-        // If the media query we have specified has an alias and a condition...
+        // If the media query we’ve specified has an alias and a condition...
         @if $mq == $alias and $condition {
 
-            // ...tell the mixin that we have found it...
+            // ...tell the mixin that we’ve found it...
             $breakpoint-found: true;
 
             // ...and spit it out here.
@@ -45,7 +45,7 @@
 
     // If the user specifies a non-exitent alias, send them a warning.
     @if $breakpoint-found == false {
-        @warn "Oops! Breakpoint '#{$mq}' does not exist."
+        @warn "Oops! Breakpoint ‘#{$mq}’ does not exist."
     }
 
 }
